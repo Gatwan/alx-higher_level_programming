@@ -19,7 +19,7 @@ def roman_to_int(roman_string):
                 result.append(1000)
         for i in range(len(result)):
             if i != len(result) - 1:
-                if result[i] < result[i +1]:
+                if result[i] < result[i + 1]:
                     result[i] = -result[i]
         return sum(result)
     else:
