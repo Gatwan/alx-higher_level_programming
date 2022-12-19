@@ -9,7 +9,7 @@ def safe_print_list(my_list=[], x=0):
                 length += 1
             print()
             return length
-        except ValueError:
+        except IndexError:
             print()
             return length
     else:
