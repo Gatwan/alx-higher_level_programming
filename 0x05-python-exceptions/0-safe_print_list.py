@@ -13,5 +13,5 @@ def safe_print_list(my_list=[], x=0):
             print()
             return length
     else:
-         print()
-         return 0
+        print()
+        return 0
