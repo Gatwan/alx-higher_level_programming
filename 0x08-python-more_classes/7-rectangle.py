@@ -61,7 +61,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             """ checks if string is empty """
             return ""
-        row = str(self.print_symbol * self.width)
+        row = (str(self.print_symbol) * self.width)
         return "\n".join([row] * self.height)
 
     def __repr__(self):
