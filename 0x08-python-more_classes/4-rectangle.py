@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This class represents a rectangle """
 
+
 class Rectangle:
     """ Class that defines a Rectangle """
     def __init__(self, width=0, height=0):
@@ -11,7 +12,7 @@ class Rectangle:
     @property
     def width(self):
         """ Private instance attribute """
-        return self._Rectangle__width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -22,12 +23,12 @@ class Rectangle:
         if value < 0:
             """ Check if width value is greater than 0 """
             raise ValueError("width must be >= 0")
-        self._Rectangle__width = value
+        self.__width = value
 
     @property
     def height(self):
         """ Private instance attribute """
-        return self._Rectangle__height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -38,7 +39,7 @@ class Rectangle:
         if value < 0:
             """ Check if height value is greater than or equal to zero """
             raise ValueError("height must be >= 0")
-        self._Rectangle__height = value
+        self.__height = value
 
     def area(self):
         """ Finds area of the rectangle """
@@ -59,6 +60,6 @@ class Rectangle:
         row = "#" * self.width
         return "\n".join([row] * self.height)
 
-    new_rectangle = eval(repr(self.width, self.height))
-    """ returns a string representation of the rectangle """
-
+    def __repr__(self):
+        """ returns a string representation of the rectangle """
+        return 'Rectangle({}, {})'.format(str(self.width), str(self.height))
