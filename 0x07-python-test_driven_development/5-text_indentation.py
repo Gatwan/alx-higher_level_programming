@@ -7,7 +7,7 @@ after each of these characters: ., ? and :
 def text_indentation(text):
     """ text must be a string """
     if not isinstance(text, str):
-        raise TypeError("ext must be a string")
+        raise TypeError("text must be a string")
 
     i = 0
     while i < len(text):
@@ -29,7 +29,7 @@ def text_indentation(text):
                         continue
                     else:
                         break
-        if text[i] == "\n":
+        elif text[i] == "\n":
             print(text[i], end="")
             i += 1
             if i < len(text):
