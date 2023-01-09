@@ -1,0 +1,99 @@
+================================
+ The ``7-base_geometry`` module
+================================
+
+Testing in ``MyList`` class ``print_sorted`` function
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+------  Zero cases -------
+
+>>> bg = BaseGeometry()
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("", 0)
+Traceback (most recent call last):
+ValueError:  must be greater than 0
+
+>>> bg.integer_validator("", 28)
+
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+ValueError: name must be greater than 0
+
+>>> bg.integer_validator("name")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+----------- value and type cases --------------
+
+>>> bg.integer_validator("santiago", 1.2)
+Traceback (most recent call last):
+TypeError: santiago must be an integer
+
+>>> bg.integer_validator("santiago", "pena")
+Traceback (most recent call last):
+TypeError: santiago must be an integer
+
+>>> bg.integer_validator("santiago", [1, 2])
+Traceback (most recent call last):
+TypeError: santiago must be an integer
+
+>>> bg.integer_validator("santiago", (1, 2))
+Traceback (most recent call last):
+TypeError: santiago must be an integer
+
+>>> bg.integer_validator("santiago", -1)
+Traceback (most recent call last):
+ValueError: santiago must be greater than 0
+
+-------------- one cases -----------------
+
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+-------------- two cases -----------------
+
+>>> bg.integer_validator("santiago", 1991)
+>>> bg.integer_validator("santiago", 1991)
+
+>>> m = __import__("7-base_geometry").__doc__
+>>> len(m) > 1
+True
+
+>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(c) > 1
+True
+
+>>> f1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(f1) > 1
+True
+
+>>> f2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(f2) > 1
+True
+
+---------- two to max-1 cases ------------
+
+>>> bg.integer_validator("       ", 1991)
+>>> bg.integer_validator("a", 1345234625725883)
+
+---------- max+1 cases ------------
+
+>>> bg.area(1)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg.integer_validator("santiago", 1991, 11)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
