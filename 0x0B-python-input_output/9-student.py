@@ -5,6 +5,10 @@
 class Student:
     """ defines a student """
 
+    first_name = ""
+    last_name = ""
+    age = 0
+
     def __init__(self, first_name, last_name, age):
         """ public instance """
 
