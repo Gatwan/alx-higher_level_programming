@@ -23,6 +23,7 @@ class Student:
         if isinstance(attrs, list) and\
             all(isinstance(item, str) for item in attrs):
             result ={}
+
             for i in attrs:
                 try:
                     result[i] = self.__dict__[i]
