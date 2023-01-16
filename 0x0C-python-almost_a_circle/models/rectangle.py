@@ -93,7 +93,7 @@ class Rectangle(Base):
 
         return str_rectangle + str_id + str_xy + str_wh
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assigns argument to each attribute """
         if args is not None and len(args) is not 0:
             list_attr = ['id', 'width', 'height', 'x', 'y']
