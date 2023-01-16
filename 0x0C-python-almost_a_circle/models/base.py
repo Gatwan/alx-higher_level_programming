@@ -3,6 +3,7 @@
 import json
 import os.path
 
+
 class Base:
     """ Defines a class Base """
     __nb_objects = 0
