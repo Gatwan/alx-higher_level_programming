@@ -1,18 +1,19 @@
 #!/usr/bin/python3
-""" Defines a Square Class
-    inherited from class Rectangle """
+""" Module that contains class Square,
+inheritance of class Rectangle
+"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ defines Square Class """
+    """ Class Rectangle """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Class constructor """
+        """ Initializes instances """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """ Overloading method """
+        """ str special method """
         str_square = "[Square] "
         str_id = "({}) ".format(self.id)
         str_xy = "{}/{} - ".format(self.x, self.y)
