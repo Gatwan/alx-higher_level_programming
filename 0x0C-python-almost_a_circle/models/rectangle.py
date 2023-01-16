@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Defines a Rectangle class 
+""" Defines a Rectangle class
     inherited from class Base """
 from models.base import Base
 
