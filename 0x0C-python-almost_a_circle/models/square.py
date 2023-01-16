@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module that contains class Square,
+""" Contains class Square,
 inheritance of class Rectangle
 """
 from models.rectangle import Rectangle
@@ -22,15 +22,21 @@ class Square(Rectangle):
         return str_square + str_id + str_xy + str_wh
 
     @property
-    def width(self):
-        """ width getter """
-        return self.__width
+    def size(self):
+        """ Getter size """
+        return self.width
 
-    @width.setter
-    def width(self, value):
-        """ width setter """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
+    @size.setter
+    def size(self, value):
+        """ Setter size """
+        self.width = value
+        self.height = value
+
+    def __str__(self):
+        """ str special method """
+        str_rectangle = "[Square] "
+        str_id = "({}) ".format(self.id)
+        str_xy = "{}/{} - ".format(self.x, self.y)
+        str_size = "{}".format(self.size)
+
+        return str_rectangle + str_id + str_xy + str_size
