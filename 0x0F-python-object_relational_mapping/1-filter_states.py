@@ -17,5 +17,6 @@ def main():
     curr.close()
     database.close()
 
+
     if __name__ == '__main__':
         main()
